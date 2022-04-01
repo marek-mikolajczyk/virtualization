@@ -42,8 +42,13 @@ https://www.getpagespeed.com/server-setup/how-to-fix-dnf-after-centos-8-went-eol
 
 block updates:
 /etc/dnf/dnf.conf
-exclude=kernel* kmod-kvdo* centos-linux-release* rocky-release*
+exclude=kernel* kmod-kvdo* 
+?maybe centos-linux-release* rocky-release*
 
 
 dnf install https://resources.ovirt.org/pub/yum-repo/ovirt-release44.rpm
 dnf install cockpit-ovirt-dashboard
+
+
+add ttyS0 to kernel params
+http://chrisreinking.com/how-to-enable-serial-console-output-in-centos/
