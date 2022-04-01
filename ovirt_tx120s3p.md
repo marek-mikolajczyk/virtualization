@@ -30,12 +30,20 @@ trying 8.5 - invalid argument
 
 after installing os
 
-change repo
+change repo or
 
 [root@rhv2 yum.repos.d]# sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
 [root@rhv2 yum.repos.d]# sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
 
 
+or migrate to rocky 
+https://www.getpagespeed.com/server-setup/how-to-fix-dnf-after-centos-8-went-eol
+
+
 block updates:
 /etc/dnf/dnf.conf
-exclude=kernel* kmod-kvdo* centos-linux-release*
+exclude=kernel* kmod-kvdo* centos-linux-release* rocky-release*
+
+
+dnf install https://resources.ovirt.org/pub/yum-repo/ovirt-release44.rpm
+dnf install cockpit-ovirt-dashboard
